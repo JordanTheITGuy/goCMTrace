@@ -7,14 +7,13 @@ import (
 func main() {
 
 	logMessage := "Hello World"
-	log := new(goCMTrace.LogEntry)
-	log.Message = logMessage
-	log.Component = "Example"
-	log.Context = "hello World"
-	log.State = 2
-	log.Thread = "hi"
-	log.File = "helloworld.log"
-
-	goCMTrace.LogData(log)
+	logObj := new(goCMTrace.LogEntry)
+	logObj.Message = logMessage
+	logObj.Component = "Example"
+	logObj.Context = "hello World"
+	logObj.State = 2
+	logObj.Thread = "hi"
+	logObj.File = "helloworld.log"
+	goCMTrace.LogData(*logObj)
 
 }
