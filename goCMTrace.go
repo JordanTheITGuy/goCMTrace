@@ -22,7 +22,7 @@ func LogData(logLine LogEntry) error {
 	if err != nil {
 		log.Println(err)
 	}
-	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\"CoreSettings\" context=\"\" type=\"1\" thread=\"1\" file=" + logLine.File + "\"\">\n"
+	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\" context=\"\" type=\"1\" thread=\"1\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()
 	if _, err := logFile.WriteString(info); err != nil {
 		log.Println(err)
