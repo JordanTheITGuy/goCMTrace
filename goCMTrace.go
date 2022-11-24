@@ -14,10 +14,10 @@ type LogEntry struct {
 	Context   string
 	State     int32
 	Thread    string
-	Tile      string
+	File      string
 }
 
-func logData(logLine logEntry) error {
+func LogData(logLine logEntry) error {
 	logFile, err := os.OpenFile(logLine.file, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Println(err)
