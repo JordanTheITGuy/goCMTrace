@@ -1,5 +1,3 @@
-<![LOG[Hello World]LOG]!><time="0000-12-31 18:27:49 -0532 LMT" date="0000-12-31 18:27:49 -0532 LMT" component="Example" context="hello World" type="2" thread="1" file=helloworld.log"">
-<![LOG[Hello World]LOG]!><time="0000-12-31 18:27:49 -0532 LMT" date="0000-12-31 18:27:49 -0532 LMT" component="main.main" context="hello World" type="2" thread="1" file=helloworld.log"">
-<![LOG[Hello World]LOG]!><time="0000-12-31 18:27:49 -0532 LMT" date="0000-12-31 18:27:49 -0532 LMT" component="main.main" context="hello World" type="2" thread="1" file=helloworld.log"">
-<![LOG[Hello World]LOG]!><time="0000-12-31 18:27:49 -0532 LMT" date="0000-12-31 18:27:49 -0532 LMT" component="main.main" context="hello World" type="2" thread="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go 15" file=helloworld.log"">
-<![LOG[Hello World]LOG]!><time="13:05:32" date="11-24-2022" component="main.main" context="hello World" type="2" thread="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go 15" file=helloworld.log"">
+<![LOG[Hello World]LOG]!><time="13:22:31.868388" date="11-24-2022" component="main.main" context="hello World" type="1" thread="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go 15" file=helloworld.log"">
+<![LOG[Hello World state 2]LOG]!><time="13:22:43.993017" date="11-24-2022" component="main.main" context="hello World" type="2" thread="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go 15" file=helloworld.log"">
+<![LOG[Hello World state 3]LOG]!><time="13:22:55.740683" date="11-24-2022" component="main.main" context="hello World" type="3" thread="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go 15" file=helloworld.log"">

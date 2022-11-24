@@ -14,9 +14,10 @@ type LogEntry struct {
 	date      string
 	Component string
 	Context   string
-	State     int
-	Thread    string
-	File      string
+	//The state must be 1, 2 or 3. - where 1 = normal 2 = warning 3 = Error
+	State  int
+	Thread string
+	File   string
 }
 
 func LogData(logLine LogEntry) error {
@@ -30,7 +31,7 @@ func LogData(logLine LogEntry) error {
 	if ok && details != nil {
 		logLine.Component = details.Name()
 		callingFile, callingLine := details.FileLine(pc)
-		logLine.Thread = callingFile + " " + strconv.Itoa(callingLine)
+		logLine.Thread = strconv.Itoa(callingLine)
 	}
 	//GetDate Time Info
 	date := time.Now()
