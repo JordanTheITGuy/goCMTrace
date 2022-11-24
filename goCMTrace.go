@@ -13,7 +13,7 @@ type LogEntry struct {
 	time      string
 	date      string
 	Component string
-	Context   string
+	source    string
 	//The state must be 1, 2 or 3. - where 1 = normal 2 = warning 3 = Error
 	State  int
 	Thread string
@@ -30,7 +30,8 @@ func LogData(logLine LogEntry) error {
 	details := runtime.FuncForPC(pc)
 	if ok && details != nil {
 		callingFile, callingLine := details.FileLine(pc)
-		logLine.Component = details.Name() + "File: " + callingFile
+		logLine.Component = details.Name()
+		logLine.source = callingFile
 		logLine.Thread = strconv.Itoa(callingLine)
 	}
 	//GetDate Time Info
@@ -39,7 +40,7 @@ func LogData(logLine LogEntry) error {
 	logLine.time = date.Format("15:04:05.999999")
 
 	//serialize log line
-	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time + "\" date=\"" + logLine.date + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"" + logLine.Thread + "\" file=" + logLine.File + "\"\">\n"
+	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time + "\" date=\"" + logLine.date + "\" component=\"" + logLine.Component + "\" source=\"" + logLine.source + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"" + logLine.Thread + "\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()
 	if _, err := logFile.WriteString(info); err != nil {
 		log.Println(err)

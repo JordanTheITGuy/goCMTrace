@@ -2,3 +2,4 @@
 <![LOG[Hello World state 2]LOG]!><time="13:22:43.993017" date="11-24-2022" component="main.main" context="hello World" type="2" thread="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go 15" file=helloworld.log"">
 <![LOG[Hello World state 3]LOG]!><time="13:22:55.740683" date="11-24-2022" component="main.main" context="hello World" type="3" thread="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go 15" file=helloworld.log"">
 <![LOG[Hello World state 3:/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go(15)]LOG]!><time="13:29:48.377137" date="11-24-2022" component="main.main" context="hello World" type="3" thread="15" file=helloworld.log"">
+<![LOG[Hello World state 3]LOG]!><time="13:35:06.377606" date="11-24-2022" component="main.mainFile: /Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go" context="hello World" type="3" thread="15" file=helloworld.log"">
