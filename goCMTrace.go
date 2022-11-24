@@ -29,9 +29,8 @@ func LogData(logLine LogEntry) error {
 	pc, _, _, ok := runtime.Caller(1)
 	details := runtime.FuncForPC(pc)
 	if ok && details != nil {
-		logLine.Component = details.Name()
 		callingFile, callingLine := details.FileLine(pc)
-		logLine.Message = logLine.Message + ":" + callingFile + "(" + strconv.Itoa(callingLine) + ")"
+		logLine.Component = details.Name() + "File: " + callingFile
 		logLine.Thread = strconv.Itoa(callingLine)
 	}
 	//GetDate Time Info
