@@ -10,8 +10,8 @@ import (
 
 type LogEntry struct {
 	Message   string
-	time      time.Time
-	date      time.Time
+	time      string
+	date      string
 	Component string
 	Context   string
 	State     int
