@@ -1,6 +1,10 @@
 package goCMTrace
 
-import (os
+import (
+	"log"
+	"os"
+	"time"
+)
 
 func logData(logLine logEntry) error {
 	logFile, err := os.OpenFile(logLine.file, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
