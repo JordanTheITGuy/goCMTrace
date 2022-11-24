@@ -15,4 +15,6 @@ func main() {
 	log.Thread = "hi"
 	log.File = "helloworld.log"
 
+	goCMTrace.LogData(log)
+
 }

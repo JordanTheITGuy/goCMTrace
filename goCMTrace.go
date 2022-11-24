@@ -17,12 +17,12 @@ type LogEntry struct {
 	File      string
 }
 
-func LogData(logLine logEntry) error {
-	logFile, err := os.OpenFile(logLine.file, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+func LogData(logLine LogEntry) error {
+	logFile, err := os.OpenFile(logLine.File, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Println(err)
 	}
-	info := "<![LOG[" + logLine.message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"CoreSettings\" context=\"\" type=\"1\" thread=\"1\" file=" + logLine.file + "\"\">\n"
+	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"CoreSettings\" context=\"\" type=\"1\" thread=\"1\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()
 	if _, err := logFile.WriteString(info); err != nil {
 		log.Println(err)
