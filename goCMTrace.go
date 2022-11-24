@@ -38,7 +38,7 @@ func LogData(logLine LogEntry) error {
 	logLine.time = date.Format("15:04:05")
 
 	//serialize log line
-	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"" + logLine.Thread + "\" file=" + logLine.File + "\"\">\n"
+	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time + "\" date=\"" + logLine.date + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"" + logLine.Thread + "\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()
 	if _, err := logFile.WriteString(info); err != nil {
 		log.Println(err)
