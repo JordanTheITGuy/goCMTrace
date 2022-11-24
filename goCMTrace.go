@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-type logEntry struct {
+type LogEntry struct {
 	Message   string
 	time      time.Time
 	date      time.Time
