@@ -11,5 +11,4 @@ func main() {
 	logObj.Message = logMessage
 	logObj.File = "helloworld.log"
 	goCMTrace.LogData(*logObj)
-
 }
