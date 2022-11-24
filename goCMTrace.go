@@ -3,6 +3,7 @@ package goCMTrace
 import (
 	"log"
 	"os"
+	"strconv"
 	"time"
 )
 
@@ -12,7 +13,7 @@ type LogEntry struct {
 	date      time.Time
 	Component string
 	Context   string
-	State     int32
+	State     int
 	Thread    string
 	File      string
 }
@@ -22,7 +23,7 @@ func LogData(logLine LogEntry) error {
 	if err != nil {
 		log.Println(err)
 	}
-	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\" context=\"\" type=\"1\" thread=\"1\" file=" + logLine.File + "\"\">\n"
+	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + " thread=\"1\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()
 	if _, err := logFile.WriteString(info); err != nil {
 		log.Println(err)
