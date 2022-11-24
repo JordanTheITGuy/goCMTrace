@@ -28,6 +28,8 @@ func LogData(logLine LogEntry) error {
 	details := runtime.FuncForPC(pc)
 	if ok && details != nil {
 		logLine.Component = details.Name()
+		callingFile, callingLine := details.FileLine(pc)
+		logLine.Thread = callingFile + " " + strconv.Itoa(callingLine)
 	}
 	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"1\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()

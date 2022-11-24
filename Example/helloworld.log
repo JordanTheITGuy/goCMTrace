@@ -1,1 +1,2 @@
 <![LOG[Hello World]LOG]!><time="0000-12-31 18:27:49 -0532 LMT" date="0000-12-31 18:27:49 -0532 LMT" component="Example" context="hello World" type="2" thread="1" file=helloworld.log"">
+<![LOG[Hello World]LOG]!><time="0000-12-31 18:27:49 -0532 LMT" date="0000-12-31 18:27:49 -0532 LMT" component="main.main" context="hello World" type="2" thread="1" file=helloworld.log"">
