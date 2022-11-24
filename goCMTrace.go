@@ -31,7 +31,7 @@ func LogData(logLine LogEntry) error {
 	if ok && details != nil {
 		callingFile, callingLine := details.FileLine(pc)
 		logLine.Component = details.Name()
-		logLine.source = callingFile
+		logLine.context = callingFile
 		logLine.Thread = strconv.Itoa(callingLine)
 	}
 	//GetDate Time Info
