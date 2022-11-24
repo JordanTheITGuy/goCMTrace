@@ -35,7 +35,7 @@ func LogData(logLine LogEntry) error {
 	//GetDate Time Info
 	date := time.Now()
 	logLine.date = date.Format("01-02-2006")
-	logLine.time = date.Format("15:04:05")
+	logLine.time = date.Format("15:04:05.999999")
 
 	//serialize log line
 	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time + "\" date=\"" + logLine.date + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"" + logLine.Thread + "\" file=" + logLine.File + "\"\">\n"
