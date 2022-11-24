@@ -20,6 +20,10 @@ import(
 ```
 ## Example
 
+There is a working example of a main.go file in the Example folder, and a screenshot of the output see below for comments and details. 
+
+![CMTrace Example](/example/exampleOutPut.png)
+
 ```go
     //Set the message you would like to log.
 	
