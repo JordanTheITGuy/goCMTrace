@@ -4,3 +4,7 @@
 <![LOG[Hello World state 3:/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go(15)]LOG]!><time="13:29:48.377137" date="11-24-2022" component="main.main" context="hello World" type="3" thread="15" file=helloworld.log"">
 <![LOG[Hello World state 3]LOG]!><time="13:35:06.377606" date="11-24-2022" component="main.mainFile: /Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go" context="hello World" type="3" thread="15" file=helloworld.log"">
 <![LOG[Hello World state 3]LOG]!><time="13:37:11.01933" date="11-24-2022" component="main.main" source="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go" type="3" thread="14" file=helloworld.log"">
+<![LOG[Hello World state 3]LOG]!><time="13:44:34.524959" date="11-24-2022" component="main.main" context="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go" type="1" thread="14" file=helloworld.log"">
+<![LOG[Hello World state 3]LOG]!><time="13:44:35.836314" date="11-24-2022" component="main.main" context="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go" type="1" thread="14" file=helloworld.log"">
+<![LOG[Hello World state 3]LOG]!><time="13:44:36.596038" date="11-24-2022" component="main.main" context="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go" type="1" thread="14" file=helloworld.log"">
+<![LOG[Hello World state 3]LOG]!><time="13:44:37.436608" date="11-24-2022" component="main.main" context="/Users/jordanbenzing/Documents/source/goCMTrace/Example/main.go" type="1" thread="14" file=helloworld.log"">

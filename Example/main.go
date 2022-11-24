@@ -6,10 +6,9 @@ import (
 
 func main() {
 
-	logMessage := "Hello World state 3"
+	logMessage := "Hello World state"
 	logObj := new(goCMTrace.LogEntry)
 	logObj.Message = logMessage
-	logObj.State = 3
 	logObj.File = "helloworld.log"
 	goCMTrace.LogData(*logObj)
 

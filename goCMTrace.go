@@ -25,6 +25,9 @@ func LogData(logLine LogEntry) error {
 	if err != nil {
 		log.Println(err)
 	}
+	if logLine.State != 2 && logLine.State != 3 {
+		logLine.State = 1
+	}
 	//Get Caller Component
 	pc, _, _, ok := runtime.Caller(1)
 	details := runtime.FuncForPC(pc)
