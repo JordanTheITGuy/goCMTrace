@@ -3,6 +3,7 @@ package goCMTrace
 import (
 	"log"
 	"os"
+	"runtime"
 	"strconv"
 	"time"
 )
@@ -22,6 +23,11 @@ func LogData(logLine LogEntry) error {
 	logFile, err := os.OpenFile(logLine.File, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Println(err)
+	}
+	pc, _, _, ok := runtime.Caller(1)
+	details := runtime.FuncForPC(pc)
+	if ok && details != nil {
+		logLine.Component = details.Name()
 	}
 	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"1\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()
