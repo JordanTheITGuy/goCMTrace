@@ -10,8 +10,8 @@ import (
 
 type LogEntry struct {
 	Message   string
-	time      time.Time
-	date      time.Time
+	time      string
+	date      string
 	Component string
 	Context   string
 	State     int
@@ -24,6 +24,7 @@ func LogData(logLine LogEntry) error {
 	if err != nil {
 		log.Println(err)
 	}
+	//Get Caller Component
 	pc, _, _, ok := runtime.Caller(1)
 	details := runtime.FuncForPC(pc)
 	if ok && details != nil {
@@ -31,6 +32,12 @@ func LogData(logLine LogEntry) error {
 		callingFile, callingLine := details.FileLine(pc)
 		logLine.Thread = callingFile + " " + strconv.Itoa(callingLine)
 	}
+	//GetDate Time Info
+	date := time.Now()
+	logLine.date = date.Format("01-02-2006")
+	logLine.time = date.Format("15:04:05")
+
+	//serialize log line
 	info := "<![LOG[" + logLine.Message + "]LOG]!><time=\"" + logLine.time.Local().String() + "\" date=\"" + logLine.date.Local().String() + "\" component=\"" + logLine.Component + "\" context=\"" + logLine.Context + "\" type=\"" + strconv.Itoa(logLine.State) + "\" thread=\"" + logLine.Thread + "\" file=" + logLine.File + "\"\">\n"
 	defer logFile.Close()
 	if _, err := logFile.WriteString(info); err != nil {
