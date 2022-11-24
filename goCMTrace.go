@@ -6,6 +6,17 @@ import (
 	"time"
 )
 
+type logEntry struct {
+	Message   string
+	time      time.Time
+	date      time.Time
+	Component string
+	Context   string
+	State     int32
+	Thread    string
+	Tile      string
+}
+
 func logData(logLine logEntry) error {
 	logFile, err := os.OpenFile(logLine.file, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
@@ -17,15 +28,4 @@ func logData(logLine logEntry) error {
 		log.Println(err)
 	}
 	return err
-}
-
-type logEntry struct {
-	message   string
-	time      time.Time
-	date      time.Time
-	component string
-	context   string
-	state     int32
-	thread    string
-	file      string
 }
